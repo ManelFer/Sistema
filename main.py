@@ -51,7 +51,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         db = DataBase()
         db.conecta
         db.insert_user(nome, user, password, access)
-        db.close_connection
+        db.close_connection()
     
 
 if __name__ == "__main__":
