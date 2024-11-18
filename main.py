@@ -49,9 +49,20 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         access = self.cb_perfil.currentText()
 
         db = DataBase()
-        db.conecta
+        db.conecta()
         db.insert_user(nome, user, password, access)
         db.close_connection()
+
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.information)
+        msg.setWindowTitle("Cadastro de usuário")
+        msg.setText("Cadastro realizado com sucesso!!!")
+        msg.exec_()
+
+        self.txt_nome.setText("")
+        self.txt_usuario.setText("")
+        self.txt_senha.setText("")
+        self.txt_senha_2.setText("")
     
 
 if __name__ == "__main__":

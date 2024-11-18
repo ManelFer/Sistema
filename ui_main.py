@@ -812,7 +812,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.Pages.setCurrentIndex(1)
+        self.Pages.setCurrentIndex(4)
         self.tabWidget.setCurrentIndex(0)
 
 
@@ -881,18 +881,18 @@ class Ui_MainWindow(object):
         self.btn_cadastrar.setText(QCoreApplication.translate("MainWindow", u"Cadastrar", None))
         self.label_13.setText("")
         self.label_15.setText(QCoreApplication.translate("MainWindow", u"CONTATOS", None))
-        self.label_19.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:16pt; font-weight:600; color:#ffffff;\">Desenvolvedor: Nicolas almeida</span></p></body></html>", None))
+        self.label_19.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:16pt; font-weight:600; color:#ffffff;\">Desenvolvedor: Manoel Ferreira Matos</span></p></body></html>", None))
         self.label_27.setText("")
         self.label_24.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><img src=\"_imgs/phone.png\"/></p></body></html>", None))
-        self.label_20.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:14pt; font-weight:600; color:#ffffff;\">(11)98013-0552</span></p></body></html>", None))
+        self.label_20.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:14pt; font-weight:600; color:#ffffff;\">(79) 9 9918-9735</span></p></body></html>", None))
         self.label_28.setText("")
         self.label_29.setText("")
         self.label_25.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><img src=\"_imgs/email.png\"/></p></body></html>", None))
-        self.label_21.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:14pt; font-weight:600; color:#ffffff;\"> contato@pytax.net</span></p></body></html>", None))
+        self.label_21.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:14pt; font-weight:600; color:#ffffff;\">manoelferreiramatos.ti@gmail.com</span></p></body></html>", None))
         self.label_30.setText("")
         self.label_31.setText("")
         self.label_26.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><img src=\"_imgs/instagram.png\"/></p></body></html>", None))
-        self.label_22.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:14pt; font-weight:600; color:#ffffff;\">pytax</span></p></body></html>", None))
+        self.label_22.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:14pt; font-weight:700; color:#ffffff;\">_manoelfm</span></p></body></html>", None))
         self.label_32.setText("")
         self.label_16.setText(QCoreApplication.translate("MainWindow", u"SOBRE", None))
         self.label_23.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">Este sistema faz a imoprta\u00e7\u00e3o de arquivos XML e faz o controle do estoque de acordo com a entrada de notas e sa\u00eddas apontadas pelo usu\u00e1rio.</span></p></body></html>", None))

@@ -34,7 +34,7 @@ class DataBase():
             cursor = self.connection.cursor()
             cursor.execute("""
                 INSERT INTO users(name, user, password, access) VALUES(?,?,?,?)
-            """)(name, user, password, access)
+            """,(name, user, password, access))
             self.connection.commit()
         except AttributeError:
             print("Faça a conexão ao banco")
