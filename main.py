@@ -24,6 +24,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         super(MainWindow, self).__init__()
         self.setupUi(self)
         self.setWindowTitle("Sistema de gerenciamento")
+
+        self.btn_home.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pg_home))
     
 
 if __name__ == "__main__":
