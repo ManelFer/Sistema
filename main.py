@@ -45,6 +45,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         nome = self.txt_nome.text()
         user = self.txt_usuario.text()
         password = self.txt_senha.text()
+        access = self.cb_perfil.currentText()
     
 
 if __name__ == "__main__":

@@ -35,8 +35,8 @@ class Ui_MainWindow(object):
         self.frame.setObjectName(u"frame")
         self.frame.setStyleSheet(u"background-color: rgb(0, 0, 20);\n"
 "")
-        self.frame.setFrameShape(QFrame.StyledPanel)
-        self.frame.setFrameShadow(QFrame.Raised)
+        self.frame.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout = QHBoxLayout(self.frame)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.btn_home = QPushButton(self.frame)
@@ -183,8 +183,8 @@ class Ui_MainWindow(object):
         sizePolicy1.setVerticalStretch(0)
         sizePolicy1.setHeightForWidth(self.frame_2.sizePolicy().hasHeightForWidth())
         self.frame_2.setSizePolicy(sizePolicy1)
-        self.frame_2.setFrameShape(QFrame.StyledPanel)
-        self.frame_2.setFrameShadow(QFrame.Raised)
+        self.frame_2.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_2.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_3 = QVBoxLayout(self.frame_2)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.btn_gerar = QPushButton(self.frame_2)
@@ -268,7 +268,7 @@ class Ui_MainWindow(object):
         font.setBold(True)
         self.label_17.setFont(font)
         self.label_17.setStyleSheet(u"color: rgb(255, 255, 255);")
-        self.label_17.setAlignment(Qt.AlignCenter)
+        self.label_17.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_10.addWidget(self.label_17)
 
@@ -327,7 +327,7 @@ class Ui_MainWindow(object):
         font1.setPointSize(11)
         self.txt_search.setFont(font1)
         self.txt_search.setStyleSheet(u"color: rgb(255, 255, 255);")
-        self.txt_search.setAlignment(Qt.AlignCenter)
+        self.txt_search.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_10.addWidget(self.txt_search)
 
@@ -378,7 +378,7 @@ class Ui_MainWindow(object):
         self.label_18.setObjectName(u"label_18")
         self.label_18.setFont(font)
         self.label_18.setStyleSheet(u"color: rgb(255, 255, 255);")
-        self.label_18.setAlignment(Qt.AlignCenter)
+        self.label_18.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_11.addWidget(self.label_18)
 
@@ -389,7 +389,7 @@ class Ui_MainWindow(object):
         self.txt_file.setMinimumSize(QSize(0, 28))
         self.txt_file.setFont(font1)
         self.txt_file.setStyleSheet(u"color: rgb(255, 255, 255);")
-        self.txt_file.setAlignment(Qt.AlignCenter)
+        self.txt_file.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.horizontalLayout_2.addWidget(self.txt_file)
 
@@ -482,14 +482,15 @@ class Ui_MainWindow(object):
         self.label_14.setObjectName(u"label_14")
         self.label_14.setFont(font)
         self.label_14.setStyleSheet(u"color: rgb(255, 255, 255);")
-        self.label_14.setAlignment(Qt.AlignCenter)
+        self.label_14.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_9.addWidget(self.label_14)
 
         self.label_6 = QLabel(self.pg_cadastro)
         self.label_6.setObjectName(u"label_6")
         self.label_6.setFont(font2)
-        self.label_6.setAlignment(Qt.AlignCenter)
+        self.label_6.setMouseTracking(True)
+        self.label_6.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_9.addWidget(self.label_6)
 
@@ -538,6 +539,7 @@ class Ui_MainWindow(object):
 "background-color:rgba(85, 115, 155,0.1);\n"
 "font-family:Trebuchet MS; \n"
 "font-size:21px;")
+        self.txt_usuario.setEchoMode(QLineEdit.EchoMode.Normal)
 
         self.horizontalLayout_7.addWidget(self.txt_usuario)
 
@@ -560,7 +562,7 @@ class Ui_MainWindow(object):
 "background-color:rgba(85, 115, 155,0.1);\n"
 "font-family:Trebuchet MS; \n"
 "font-size:21px;")
-        self.txt_senha.setEchoMode(QLineEdit.Password)
+        self.txt_senha.setEchoMode(QLineEdit.EchoMode.Password)
 
         self.horizontalLayout_6.addWidget(self.txt_senha)
 
@@ -583,7 +585,7 @@ class Ui_MainWindow(object):
 "background-color:rgba(85, 115, 155,0.1);\n"
 "font-family:Trebuchet MS; \n"
 "font-size:21px;")
-        self.txt_senha_2.setEchoMode(QLineEdit.Password)
+        self.txt_senha_2.setEchoMode(QLineEdit.EchoMode.Password)
 
         self.horizontalLayout_5.addWidget(self.txt_senha_2)
 
@@ -658,7 +660,7 @@ class Ui_MainWindow(object):
         self.label_15.setObjectName(u"label_15")
         self.label_15.setFont(font)
         self.label_15.setStyleSheet(u"color: rgb(255, 255, 255);")
-        self.label_15.setAlignment(Qt.AlignCenter)
+        self.label_15.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_12.addWidget(self.label_15)
 
@@ -666,7 +668,7 @@ class Ui_MainWindow(object):
         self.label_19.setObjectName(u"label_19")
         sizePolicy.setHeightForWidth(self.label_19.sizePolicy().hasHeightForWidth())
         self.label_19.setSizePolicy(sizePolicy)
-        self.label_19.setAlignment(Qt.AlignCenter)
+        self.label_19.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_12.addWidget(self.label_19)
 
@@ -690,7 +692,7 @@ class Ui_MainWindow(object):
         self.label_20.setObjectName(u"label_20")
         sizePolicy.setHeightForWidth(self.label_20.sizePolicy().hasHeightForWidth())
         self.label_20.setSizePolicy(sizePolicy)
-        self.label_20.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+        self.label_20.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
 
         self.horizontalLayout_12.addWidget(self.label_20)
 
@@ -725,7 +727,7 @@ class Ui_MainWindow(object):
         self.label_21.setObjectName(u"label_21")
         sizePolicy.setHeightForWidth(self.label_21.sizePolicy().hasHeightForWidth())
         self.label_21.setSizePolicy(sizePolicy)
-        self.label_21.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+        self.label_21.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
 
         self.horizontalLayout_13.addWidget(self.label_21)
 
@@ -760,7 +762,7 @@ class Ui_MainWindow(object):
         self.label_22.setObjectName(u"label_22")
         sizePolicy.setHeightForWidth(self.label_22.sizePolicy().hasHeightForWidth())
         self.label_22.setSizePolicy(sizePolicy)
-        self.label_22.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+        self.label_22.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
 
         self.horizontalLayout_14.addWidget(self.label_22)
 
@@ -784,7 +786,7 @@ class Ui_MainWindow(object):
         self.label_16.setObjectName(u"label_16")
         self.label_16.setFont(font)
         self.label_16.setStyleSheet(u"color: rgb(255, 255, 255);")
-        self.label_16.setAlignment(Qt.AlignCenter)
+        self.label_16.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_13.addWidget(self.label_16)
 
@@ -810,7 +812,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.Pages.setCurrentIndex(1)
+        self.Pages.setCurrentIndex(3)
         self.tabWidget.setCurrentIndex(0)
 
 
@@ -865,8 +867,8 @@ class Ui_MainWindow(object):
         self.label_4.setText("")
         self.btn_import.setText(QCoreApplication.translate("MainWindow", u"IMPORTAR", None))
         self.label_5.setText("")
-        self.label_14.setText(QCoreApplication.translate("MainWindow", u"Tela de cadastro", None))
-        self.label_6.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><img src=\"_imgs/user.png\"/></p><p align=\"center\"><span style=\" font-size:14pt; font-weight:600; color:#ffffff;\">CADASTRAR USU\u00c1RIO</span></p></body></html>", None))
+        self.label_14.setText(QCoreApplication.translate("MainWindow", u"Cadastro", None))
+        self.label_6.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt; font-weight:600; color:#ffffff;\">Adicionar Ususario</span></p></body></html>", None))
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#ffffff;\">Nome:</span></p></body></html>", None))
         self.label_8.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#ffffff;\">Usu\u00e1rio</span></p></body></html>", None))
         self.label_9.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#ffffff;\">Senha:</span></p></body></html>", None))
