@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import (QApplication, QMainWindow, QWidget)
+from PySide6.QtWidgets import (QApplication, QMainWindow, QWidget, QMessageBox)
 from ui_login import Ui_Login
 from ui_main import Ui_MainWindow
 import sys
@@ -25,11 +25,26 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.setWindowTitle("Sistema de gerenciamento")
 
+        #******************PAGINAS DO SISTEMA******************
         self.btn_home.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pg_home))
         self.btn_tables.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pg_table))
         self.btn_contato.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pg_contato))
         self.btn_sobre.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pg_sobre))
         self.btn_pg_cadastro.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pg_cadastro))
+
+        self.btn_cadastrar.clicked.connect(self.subscribe_user)
+
+    def subscribe_user(self):
+        if self.txt_senha.text() != self.txt_senha_2.text():
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.warning)
+            msg.setWindowTitle("Senhas diferentes")
+            msg.setText("Senha diferentes!!!")
+            msg.exec_()
+            return None
+        nome = self.txt_nome.text()
+        user = self.txt_usuario.text()
+        password = self.txt_senha.text()
     
 
 if __name__ == "__main__":
