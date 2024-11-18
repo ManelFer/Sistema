@@ -26,6 +26,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.setWindowTitle("Sistema de gerenciamento")
 
         self.btn_home.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pg_home))
+        self.btn_tables.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pg_table))
+        self.btn_contato.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pg_contato))
+        self.btn_sobre.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pg_sobre))
+        self.btn_pg_cadastro.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pg_cadastro))
     
 
 if __name__ == "__main__":
