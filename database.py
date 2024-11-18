@@ -22,7 +22,7 @@ class DataBase():
                            name TEXT NOT NULL,
                            user TEXT UNIQUE NOT NULL,
                            password TEXT NOT NULL,
-                           access TEXT NOT NULL, 
+                           access TEXT NOT NULL
                         )
                     """)
         except AttributeError:
