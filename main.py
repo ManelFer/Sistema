@@ -1,5 +1,6 @@
 from PySide6.QtWidgets import (QApplication, QMainWindow, QWidget)
 from ui_login import Ui_Login
+from ui_main import Ui_MainWindow
 import sys
 
 class Login(QWidget, Ui_Login):
@@ -7,6 +8,23 @@ class Login(QWidget, Ui_Login):
         super(Login, self).__init__()
         self.setupUi(self)
         self.setWindowTitle("Login do sistema")
+        self.btn_login.clicked.connect(self.open_system)
+
+    def open_system(self):
+        if self.txt_password.text() == '123':
+            self.w = MainWindow()
+            self.w.show()
+            self.close()
+        else:
+            print('Senha inválida')
+
+
+class MainWindow(QMainWindow, Ui_MainWindow):
+    def __init__(self):
+        super(MainWindow, self).__init__()
+        self.setupUi(self)
+        self.setWindowTitle("Sistema de gerenciamento")
+    
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
