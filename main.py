@@ -2,6 +2,7 @@ from PySide6.QtWidgets import (QApplication, QMainWindow, QWidget, QMessageBox)
 from ui_login import Ui_Login
 from ui_main import Ui_MainWindow
 import sys
+from database import DataBase
 
 class Login(QWidget, Ui_Login):
     def __init__(self) -> None:
@@ -46,6 +47,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         user = self.txt_usuario.text()
         password = self.txt_senha.text()
         access = self.cb_perfil.currentText()
+
+        db = DataBase()
+        db.conecta
+        db.insert_user(nome, user, password, access)
+        db.close_connection
     
 
 if __name__ == "__main__":

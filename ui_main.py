@@ -812,7 +812,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.Pages.setCurrentIndex(3)
+        self.Pages.setCurrentIndex(1)
         self.tabWidget.setCurrentIndex(0)
 
 
@@ -859,7 +859,7 @@ class Ui_MainWindow(object):
         self.btn_excel.setText(QCoreApplication.translate("MainWindow", u"Gerar Excel", None))
         self.txt_search.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Filtro", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("MainWindow", u"GERAL", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:48pt; font-weight:600; color:#ffffff;\">PYTAX</span></p><p align=\"center\"><span style=\" font-size:24pt; color:#ffffff;\">Sistema de gerenciamento</span></p><p align=\"center\"><span style=\" font-size:24pt; color:#ffffff;\"><img src=\"_imgs/logo.png\"/></span></p></body></html>", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:48pt; font-weight:600; color:#ffffff;\">RogueAi</span></p><p align=\"center\"><span style=\" font-size:24pt; color:#ffffff;\">Sistema de controle</span></p><p align=\"center\"><img src=\"_imgs/logo.png\"/></p></body></html>", None))
         self.btn_pg_cadastro.setText(QCoreApplication.translate("MainWindow", u"Cadastrar Usu\u00e1rio", None))
         self.label_18.setText(QCoreApplication.translate("MainWindow", u"IMPORTAR XML", None))
         self.txt_file.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Seleciona a pasta com os arquivos XML --->", None))
