@@ -10,16 +10,23 @@ class Login(QWidget, Ui_Login):
         self.tentativas = 0
         self.setupUi(self)
         self.setWindowTitle("Login do sistema")
-        self.btn_login.clicked.connect(self.checkLogin)
+        self.btn_login.clicked.connect(self.checkLogin, self.open_system)
 
+    def open_system(self):
+        if self.txt_password.text() == '123':
+            self.w = MainWindow()
+            self.w.show()
+            self.close()
+        else:
+            print('Senha inválida')
 
     # check de usuario no banco
     def checkLogin(self):
         self.users = DataBase()
         self.users.conecta()
         autenticado = self.users.check_user(self.txt_login.text().upper(), self.txt_password.text())
-        if autenticado.lower == "administrador" or autenticado.lower() == "user":
-            self.w = MainWindow(autenticado.lower())
+        if autenticado.lower == "administrador" or autenticado == "user":
+            self.w = MainWindow(self.txt_login.text(), autenticado.lower())
             self.w.show()
             self.close()
         else:
@@ -37,11 +44,12 @@ class Login(QWidget, Ui_Login):
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
-    def __init__(self, user):
+    def __init__(self, username, user):
         super(MainWindow, self).__init__()
         self.setupUi(self)
         self.setWindowTitle("Sistema de gerenciamento")
-        # metodo para remover o botão de cadastro de usuario para pessoa usuario
+
+        self.user = username
         if user.lower() == "user":
             self.btn_pg_cadastro.setVisible(False)
 
