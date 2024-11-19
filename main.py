@@ -11,6 +11,7 @@ class Login(QWidget, Ui_Login):
         self.setupUi(self)
         self.setWindowTitle("Login do sistema")
         self.btn_login.clicked.connect(self.open_system)
+        self.btn_login.clicked.connect(self.checkLogin)
 
     def open_system(self):
         if self.txt_password.text() == '123':
@@ -32,10 +33,10 @@ class Login(QWidget, Ui_Login):
         else:
             if self.tentativas < 3:
                 msg = QMessageBox()
-                msg.setIcon(QMessageBox.warning)
+                msg.setIcon(QMessageBox.Warning)
                 msg.setWindowTitle("Erro ao acessar")
                 msg.setText(f'Login ou senha incorreto \n \n Tentativas: {self.tentativas +1} de 3')
-                msg.exec_()
+                msg.exec()
                 self.tentativas +=1
             if self.tentativas == 3:
                 #bloquear usuário
@@ -92,4 +93,4 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = Login()
     window.show()
-    app.exec_()
+    app.exec()
