@@ -18,11 +18,11 @@ class DataBase():
             cursor = self.connection.cursor()
             cursor.execute("""
                         CREATE TABLE IF NOT EXISTS users(
-                           id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-                           name TEXT NOT NULL,
-                           user TEXT UNIQUE NOT NULL,
-                           password TEXT NOT NULL,
-                           access TEXT NOT NULL
+                            id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                            name TEXT NOT NULL,
+                            user TEXT UNIQUE NOT NULL,
+                            password TEXT NOT NULL,
+                            access TEXT NOT NULL
                         )
                     """)
         except AttributeError:
