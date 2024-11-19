@@ -56,8 +56,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.btn_contato.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pg_contato))
         self.btn_sobre.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pg_sobre))
         self.btn_pg_cadastro.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pg_cadastro))
+        self.btn_pg_import.clicked.connect(lambda:self.Pages.setCurrentWidget(self.pg_import))
 
         self.btn_cadastrar.clicked.connect(self.subscribe_user)
+
 
     def subscribe_user(self):
         if self.txt_senha.text() != self.txt_senha_2.text():
