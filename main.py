@@ -18,14 +18,14 @@ class Login(QWidget, Ui_Login):
         self.users = DataBase()
         self.users.conecta()
         autenticado = self.users.check_user(self.txt_login.text().upper(), self.txt_password.text())
-        if autenticado.lower == "administrador" or autenticado == "user":
-            self.w = MainWindow()
+        if autenticado.lower == "administrador" or autenticado.lower() == "user":
+            self.w = MainWindow(autenticado.lower())
             self.w.show()
             self.close()
         else:
             if self.tentativas < 3:
                 msg = QMessageBox()
-                msg.setIcon(QMessageBox.warning)
+                msg.setIcon(QMessageBox.Warning)
                 msg.setWindowTitle("Erro ao acessar")
                 msg.setText(f'Login ou senha incorreto \n \n Tentativas: {self.tentativas +1} de 3')
                 msg.exec_()
@@ -37,10 +37,13 @@ class Login(QWidget, Ui_Login):
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
-    def __init__(self):
+    def __init__(self, user):
         super(MainWindow, self).__init__()
         self.setupUi(self)
         self.setWindowTitle("Sistema de gerenciamento")
+        # metodo para remover o botão de cadastro de usuario para pessoa usuario
+        if user.lower() == "user":
+            self.btn_pg_cadastro.setVisible(False)
 
         #******************PAGINAS DO SISTEMA******************
         self.btn_home.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pg_home))
