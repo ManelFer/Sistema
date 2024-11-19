@@ -14,7 +14,7 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(0, 80, 121);</string>
+   <string notr="true">background-color: #c4dcb4;</string>
   </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
@@ -48,13 +48,13 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgba(0,0,0,0.2)</string>
+    <string notr="true">background-color: #05754b</string>
    </property>
    <property name="frameShape">
-    <enum>QFrame::StyledPanel</enum>
+    <enum>QFrame::Shape::StyledPanel</enum>
    </property>
    <property name="frameShadow">
-    <enum>QFrame::Raised</enum>
+    <enum>QFrame::Shadow::Raised</enum>
    </property>
    <widget class="QLineEdit" name="txt_login">
     <property name="geometry">
@@ -72,7 +72,7 @@
      <string/>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
     <property name="placeholderText">
      <string>User</string>
@@ -102,6 +102,9 @@ QPushButton:hover{background-color: #fff; color:black}
     </property>
    </widget>
    <widget class="QLineEdit" name="txt_password">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>60</x>
@@ -117,10 +120,10 @@ QPushButton:hover{background-color: #fff; color:black}
      <string/>
     </property>
     <property name="echoMode">
-     <enum>QLineEdit::Password</enum>
+     <enum>QLineEdit::EchoMode::Password</enum>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
     <property name="placeholderText">
      <string>Password</string>
