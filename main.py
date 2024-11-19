@@ -61,7 +61,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def subscribe_user(self):
         if self.txt_senha.text() != self.txt_senha_2.text():
             msg = QMessageBox()
-            msg.setIcon(QMessageBox.warning)
+            msg.setIcon(QMessageBox.Warning)
             msg.setWindowTitle("Senhas diferentes")
             msg.setText("Senha diferentes!!!")
             msg.exec_()
@@ -77,7 +77,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         db.close_connection()
 
         msg = QMessageBox()
-        msg.setIcon(QMessageBox.information)
+        msg.setIcon(QMessageBox.Information)
         msg.setWindowTitle("Cadastro de usuário")
         msg.setText("Cadastro realizado com sucesso!!!")
         msg.exec_()
