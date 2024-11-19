@@ -7,17 +7,33 @@ from database import DataBase
 class Login(QWidget, Ui_Login):
     def __init__(self) -> None:
         super(Login, self).__init__()
+        self.tentativas = 0
         self.setupUi(self)
         self.setWindowTitle("Login do sistema")
-        self.btn_login.clicked.connect(self.open_system)
+        self.btn_login.clicked.connect(self.checkLogin)
 
-    def open_system(self):
-        if self.txt_password.text() == '123':
+
+    # check de usuario no banco
+    def checkLogin(self):
+        self.users = DataBase()
+        self.users.conecta()
+        autenticado = self.users.check_user(self.txt_login.text().upper(), self.txt_password.text())
+        if autenticado.lower == "administrador" or autenticado == "user":
             self.w = MainWindow()
             self.w.show()
             self.close()
         else:
-            print('Senha inválida')
+            if self.tentativas < 3:
+                msg = QMessageBox()
+                msg.setIcon(QMessageBox.warning)
+                msg.setWindowTitle("Erro ao acessar")
+                msg.setText(f'Login ou senha incorreto \n \n Tentativas: {self.tentativas +1} de 3')
+                msg.exec_()
+                self.tentativas +=1
+            if self.tentativas == 3:
+                #bloquear usuário
+                self.users.close_connection()
+                sys.exit(0)
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
