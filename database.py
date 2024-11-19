@@ -28,19 +28,6 @@ class DataBase():
         except AttributeError:
             print("Faça a conexão com o banco")
 
-    def admin_user(self):
-        try:
-            cursor = self.connection.cursor()
-            name = "manoel"
-            user = "kiwi"
-            password = "senha123"
-            access = "Administrador"
-            cursor.execute("""
-                        INSERT INTO user (name, user, password, access) VALUES(?,?,?,?)
-                    """, (name, user, password, access))
-            self.connection.commit()
-        except sqlite3.IntegrityError as e:
-            print(f"Erro ao adicionar usuário: {e}")
 
     # Adicionar alguem ao abnco
     def insert_user(self, name, user, password, access):

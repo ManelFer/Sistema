@@ -10,7 +10,7 @@ class Login(QWidget, Ui_Login):
         self.tentativas = 0
         self.setupUi(self)
         self.setWindowTitle("Login do sistema")
-        self.btn_login.clicked.connect(self.checkLogin)
+        self.btn_login.clicked.connect(self.open_system)
 
     def open_system(self):
         if self.txt_password.text() == '123':
