@@ -44,9 +44,9 @@ class DataBase():
         try:
             cursor = self.connection.cursor()
             cursor.execute("""
-                SELECT * FROM users;
-            """)
-
+                SELECT access FROM users WHERE user = ? AND password = ?;
+            """, (user, password))
+            
             # Metodo para verificar quem fez a mudança 
             for linha in cursor.fetchall():
                 if linha[2].upper () == user.upper() and linha [3] == password and linha[4] == "Administrador":
