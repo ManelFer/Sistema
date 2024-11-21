@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>855</width>
-    <height>542</height>
+    <width>849</width>
+    <height>529</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -169,7 +169,7 @@ QPushButton:hover{background-color: #fff; color:black}
        <string notr="true">background-color: rgb(0, 80, 121);</string>
       </property>
       <property name="currentIndex">
-       <number>4</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="pg_table">
        <layout class="QVBoxLayout" name="verticalLayout_8">
