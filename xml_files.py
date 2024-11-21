@@ -46,6 +46,10 @@ class Read_xml():
              valorNfe, itemNota,  cod, qntd, descricao, unidade_medida, valorProd,
              data_importacao, usuario, data_saida]
 
+            notas.append(dados)
+            itemNota +=1
+        return notas
+
 
     
     #
@@ -64,4 +68,7 @@ class Read_xml():
             cnpj = f'{cnpj[:2]}.{cnpj[2:5]}.{cnpj[5:8]}/{cnpj[8:12]} - {cnpj[12:14]}'
             return cnpj
         except:
-            return
+            return ""
+if __name__ == "__main__":
+    xml = Read_xml("")
+    
