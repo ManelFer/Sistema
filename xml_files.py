@@ -1,5 +1,6 @@
 import os
 import xml.etree.ElementTree as Et
+from datetime import date
 
 class Read_xml():
     def __init__(self, directory):
@@ -23,6 +24,12 @@ class Read_xml():
         chave = self.check_none(root.find("./ns:protNFe/ns:infProt/ns:chNFe", nsNFe))
         cnpj_emitente = self.check_none(root.find("./ns:NFe/ns:infNFe/ns:emit/ns:CNPJ", nsNFe))
         nome_emitente = self.check_none(root.find("./ns:NFe/ns:infNFe/ns:emit/ns:xNome", nsNFe)) #1
+
+        cnpj_emitente = self.format_cnpj(cnpj_emitente)
+        valorNfe = self.check_none(root.find("./ns:NFe/ns:infNFe/ns:total/ns:ICMSTot/ns:vNF", nsNFe)) #13
+        data_importacao = date.today
+
+
     
     #
     def check_none(self, var):
