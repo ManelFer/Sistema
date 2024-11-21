@@ -15,7 +15,7 @@ class Read_xml():
         nsNFe = {"ns": "http://www.portalfiscal.inf.br/nfe"}
 
         #dados da nfe
-        Nfe = self.check_none(root.find("./ns:NFe/ns:infNfe/ns:ide/ns:nNF",nsNFe))
+        NFe = self.check_none(root.find("./ns:NFe/ns:infNfe/ns:ide/ns:nNF",nsNFe))
         serie = self.check_none(root.find("./ns:NFe/ns:infNFe/ns:ide/ns:serie", nsNFe)) #2
         data_emissao = self.check_none(root.find("./ns:NFe/ns:infNFe/ns:ide/ns:dhEmi", nsNFe))
         data_emissao = F"{data_emissao[8:10]}/{data_emissao[5:7]}/{data_emissao[:4]}"
@@ -29,6 +29,22 @@ class Read_xml():
         valorNfe = self.check_none(root.find("./ns:NFe/ns:infNFe/ns:total/ns:ICMSTot/ns:vNF", nsNFe)) #13
         data_importacao = date.today() #trazer data de importação
         data_importacao = data_importacao.strftime('%d/%/m/%Y')
+        data_saida = ""
+        usuario = ''
+        itemNota = 1
+        notas = []
+
+        for item in root.findall("./ns:NFe/ns:infNFe/ns:det", nsNFe):
+             # DADOS DO ITEM =======================================================================================
+            cod = self.check_none(item.find(".ns:prod/ns:cProd", nsNFe)) 
+            qntd = self.check_none(item.find(".ns:prod/ns:qCom", nsNFe))  
+            descricao = self.check_none(item.find(".ns:prod/ns:xProd", nsNFe))
+            unidade_medida = self.check_none(item.find(".ns:prod/ns:uCom", nsNFe))
+            valorProd = self.check_none(item.find (".ns:prod/ns:vProd", nsNFe))
+
+            dados = [NFe, serie, data_emissao,chave, cnpj_emitente, nome_emitente,
+             valorNfe, itemNota,  cod, qntd, descricao, unidade_medida, valorProd,
+             data_importacao, usuario, data_saida]
 
 
     
