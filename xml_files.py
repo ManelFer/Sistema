@@ -11,13 +11,18 @@ class Read_xml():
     # leitura do xml
     def nfe_data(self, xml):
         root = Et.parse(xml).getroot()
-        nsNfe = {"ns": "http://www.portalfiscal.inf.br/nfe"}
+        nsNFe = {"ns": "http://www.portalfiscal.inf.br/nfe"}
 
         #dados da nfe
-        Nfe = self.check_none(root.find("./ns:NFe/ns:infNfe/ns:ide/ns:nNF",nsNfe))
-        serie = self.check_none(root.find("./ns:NFe/ns:infNFe/ns:ide/ns:serie", nsNfe)) #2
-        data_emissao = self.check_none(root.find("./ns:NFe/ns:infNFe/ns:ide/ns:dhEmi", nsNfe))
+        Nfe = self.check_none(root.find("./ns:NFe/ns:infNfe/ns:ide/ns:nNF",nsNFe))
+        serie = self.check_none(root.find("./ns:NFe/ns:infNFe/ns:ide/ns:serie", nsNFe)) #2
+        data_emissao = self.check_none(root.find("./ns:NFe/ns:infNFe/ns:ide/ns:dhEmi", nsNFe))
         data_emissao = F"{data_emissao[8:10]}/{data_emissao[5:7]}/{data_emissao[:4]}"
+
+        # DADOS EMITENTES
+        chave = self.check_none(root.find("./ns:protNFe/ns:infProt/ns:chNFe", nsNFe))
+        cnpj_emitente = self.check_none(root.find("./ns:NFe/ns:infNFe/ns:emit/ns:CNPJ", nsNFe))
+        nome_emitente = self.check_none(root.find("./ns:NFe/ns:infNFe/ns:emit/ns:xNome", nsNFe)) #1
     
     #
     def check_none(self, var):
