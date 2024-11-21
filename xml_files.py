@@ -27,7 +27,8 @@ class Read_xml():
 
         cnpj_emitente = self.format_cnpj(cnpj_emitente)
         valorNfe = self.check_none(root.find("./ns:NFe/ns:infNFe/ns:total/ns:ICMSTot/ns:vNF", nsNFe)) #13
-        data_importacao = date.today
+        data_importacao = date.today() #trazer data de importação
+        data_importacao = data_importacao.strftime('%d/%/m/%Y')
 
 
     
